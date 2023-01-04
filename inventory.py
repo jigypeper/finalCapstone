@@ -108,11 +108,6 @@ def update_inventory():
     # loop through shoe list, concatenate the write_data variable with shoe data (in same order as source)
     for i, item in enumerate(shoe_list):
         write_data += f"{item.country},{item.code},{item.product},{item.cost},{item.quantity}\n"
-        # check if it is last item, if not add new line (\n)
-        # if i != len(shoe_list) - 1:
-        #     write_data += f"{item.country},{item.code},{item.product},{item.cost},{item.quantity}\n"
-        # else:
-        #     write_data += f"{item.country},{item.code},{item.product},{item.cost},{item.quantity}"
 
     # open the inventory file in write mode (will overwrite the data), write the string to the file
     with open(file="./inventory.txt", mode="w") as updated_inventory_file:
